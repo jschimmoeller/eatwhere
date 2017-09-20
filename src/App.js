@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import {Text, View} from 'react-native';
-import Config from './configs/firebase';
-import * as firebase from 'firebase';
+import { connect } from 'react-redux';
 
-const firebaseApp = firebase.initializeApp(Config.firebaseConfig);
-
-console.log('fa:', firebaseApp)
 
 class App extends Component {
   render() {
+    console.log('app state: ', this.props.app)
     return (
-      <View><Text>Hello World</Text></View>
+        <View><Text>Hello World</Text></View>
     );
   }
 }
 
-export default App;
+export default connect((state)=>{
+  return {
+    app: state.app
+  }
+})(App);

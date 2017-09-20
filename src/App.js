@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Text, View} from 'react-native';
+import Config from './configs/firebase';
 
 class App extends Component {
   render() {
